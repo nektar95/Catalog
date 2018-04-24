@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B96C18EA-D71A-41DD-A9EA-8BB78A1AC27A}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Catalog</RootNamespace>
-    <AssemblyName>Catalog</AssemblyName>
+    <ProjectGuid>{4CE99CD8-60C8-4D7F-BA9F-1D7F29AA61C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAOMock2</RootNamespace>
+    <AssemblyName>DAOMock2</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,20 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="BO\Producer.cs" />
+    <Compile Include="BO\Tea.cs" />
+    <Compile Include="DAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BLC\BLC.csproj">
-      <Project>{72ffd36c-39b0-4ed4-b8dd-b8c875f6f4af}</Project>
-      <Name>BLC</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAOMock\DAOMock.csproj">
-      <Project>{da650574-0138-4825-8817-043496438c88}</Project>
-      <Name>DAOMock</Name>
+    <ProjectReference Include="..\Core\Core.csproj">
+      <Project>{1570233a-1b14-4f2d-80d2-0afd257435f3}</Project>
+      <Name>Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{2B915C8A-98E0-42B2-9CFA-D468845A917A}</Project>

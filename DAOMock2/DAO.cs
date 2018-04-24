@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DAOMock
+namespace DAOMock2
 {
     public class DAO : IDAO
     {

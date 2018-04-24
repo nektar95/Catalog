@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAOMock", "DAOMock\DAOMock.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLC", "BLC\BLC.csproj", "{72FFD36C-39B0-4ED4-B8DD-B8C875F6F4AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAOMock2", "DAOMock2\DAOMock2.csproj", "{4CE99CD8-60C8-4D7F-BA9F-1D7F29AA61C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{72FFD36C-39B0-4ED4-B8DD-B8C875F6F4AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72FFD36C-39B0-4ED4-B8DD-B8C875F6F4AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72FFD36C-39B0-4ED4-B8DD-B8C875F6F4AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CE99CD8-60C8-4D7F-BA9F-1D7F29AA61C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CE99CD8-60C8-4D7F-BA9F-1D7F29AA61C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CE99CD8-60C8-4D7F-BA9F-1D7F29AA61C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CE99CD8-60C8-4D7F-BA9F-1D7F29AA61C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
