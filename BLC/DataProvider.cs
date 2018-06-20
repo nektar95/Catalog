@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Reflection;
+using System.IO;
 using BLC.Properties;
 
 namespace BLC
@@ -14,31 +15,31 @@ namespace BLC
     {
         private Settings _settings = new Settings();
 
-        public IDAO DAO { get; set;}
+        public IDAO _DAO { get; set;}
 
         public IEnumerable<ITea> getTeas
         {
-            get { return DAO.GetAllTeas(); }
+            get { return _DAO.GetAllTeas(); }
         }
 
         public IEnumerable<IProducer> getProducers
         {
-            get { return DAO.GetAllProducers(); }
+            get { return _DAO.GetAllProducers(); }
         }
 
-        private void _loadChosenDatabase()
+        public DataProvider(string databaseName)
         {
-            Assembly assemblyDAO = Assembly.UnsafeLoadFrom(System.IO.Directory.GetParent(System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).ToString()).ToString() + "/" + _settings.mockName + ".dll");
-            Type typeDAO = assemblyDAO.GetType( _settings.mockName + ".DAO");
-            ConstructorInfo constructorInfo = typeDAO.GetConstructor(new Type[] { });
-            var temp = constructorInfo.Invoke(new object[] { });
-            DAO = (IDAO)temp;
-        }
+            var path = Directory.GetCurrentDirectory() + string.Format(@"\{0}.dll", databaseName);
+            var dll = Assembly.LoadFrom(path);
 
-        public DataProvider()
-        {
-            //DAO = (IDAO) new DAOMock.DAO();
-            _loadChosenDatabase();
+            foreach (var type in dll.GetTypes())
+            {
+                if (type.GetInterfaces().Any(i => i == typeof(IDAO)))
+                {
+                    _DAO = (IDAO)Activator.CreateInstance(type, new object[] { });
+                    break;
+                }
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using BLC;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ namespace CatalogNew
     {
         public static void Main(string[] args)
         {
-            BLC.DataProvider dataProvider = new BLC.DataProvider();
+            BLC.DataProvider dataProvider = new BLC.DataProvider("DAOMock");
 
             Console.WriteLine("Producenci herbaty:");
 
