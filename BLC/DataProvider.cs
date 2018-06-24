@@ -41,5 +41,35 @@ namespace BLC
                 }
             }
         }
+
+        public ITea addNewTea()
+        {
+            return _DAO.AddNewTea();
+        }
+
+        public IProducer addNewProducer()
+        {
+            return _DAO.AddNewProducer();
+        }
+
+        public void saveProduct(ITea t)
+        {
+            _DAO.SaveTea(t);
+        }
+
+        public void SaveProducer(IProducer p)
+        {
+            _DAO.SaveProducer(p);
+        }
+
+        public void DeleteProduct(ITea t)
+        {
+            _DAO.DeleteTea(t);
+        }
+
+        public void DeleteProducer(IProducer p)
+        {
+            _DAO.DeleteProducer(p);
+        }
     }
 }

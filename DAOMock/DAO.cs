@@ -1,4 +1,5 @@
-﻿using Interfaces;
+﻿using DAOMock.BO;
+using Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,47 @@ namespace DAOMock
         public IEnumerable<IProducer> GetAllProducers()
         {
             return _producers;
+        }
+
+        public IProducer AddNewProducer()
+        {
+            Producer p = new Producer();
+            p.Number = "";
+            p.Name = "";
+            p.Country = "";
+            p.Url = "";
+            return (IProducer)p;
+        }
+
+        public ITea AddNewTea()
+        {
+            Tea t = new Tea();
+            t.Name = "";
+            return (ITea)t;
+        }
+
+        public void SaveTea(ITea p)
+        {
+            if (!_teas.Contains(p))
+                _teas.Add(p);
+        }
+
+        public void SaveProducer(IProducer p)
+        {
+            if (!_producers.Contains(p))
+                _producers.Add(p);
+        }
+
+        public void DeleteTea(ITea p)
+        {
+            if (_teas.Contains(p))
+                _teas.Remove(p);
+        }
+
+        public void DeleteProducer(IProducer p)
+        {
+            if (_producers.Contains(p))
+                _producers.Remove(p);
         }
     }
 }

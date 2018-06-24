@@ -10,5 +10,14 @@ namespace Interfaces
     {
         IEnumerable<ITea> GetAllTeas();
         IEnumerable<IProducer> GetAllProducers();
+
+        IProducer AddNewProducer();
+        ITea AddNewTea();
+
+        void SaveTea(ITea t);
+        void SaveProducer(IProducer p);
+
+        void DeleteTea(ITea t);
+        void DeleteProducer(IProducer p);
     }
 }
